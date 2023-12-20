@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: mkubtestapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mkubtestapp
+  template:
+    metadata:
+      labels:
+        app: mkubtestapp 
+    spec:
+      containers:
+        - name: mkubtestapp 
+          image: azdevapp.azurecr.io/mkubtestapp
+          ports:
+          - containerPort: 80
